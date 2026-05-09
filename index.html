@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Continental Partner Handbook | Prestige Weddings & Events</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B3A5C;
+    --blue: #2E75B6;
+    --light-blue: #D6E8F5;
+    --pale-blue: #EEF5FB;
+    --alert-bg: #FFF8E1;
+    --alert-border: #E6C200;
+    --alert-text: #6D5200;
+    --dark: #1a1a2e;
+    --body: #3a3a4a;
+    --muted: #6b7280;
+    --light-gray: #f4f5f7;
+    --border: #e2e5ea;
+    --white: #ffffff;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--body);
+    background: var(--light-gray);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, #0f2439 0%, #1B3A5C 40%, #2E75B6 100%);
+    color: white;
+    text-align: center;
+    padding: 3.5rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(46,117,182,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(255,255,255,0.05) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+  }
+  .hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-divider {
+    width: 60px;
+    height: 2px;
+    background: rgba(255,255,255,0.3);
+    margin: 0 auto 1.2rem;
+    border-radius: 2px;
+  }
+  .hero-sub {
+    font-size: 0.85rem;
+    opacity: 0.65;
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .hero-venues {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.85;
+  }
+  .hero-venues span::before {
+    content: '⚓';
+    margin-right: 0.35rem;
+    font-size: 0.8rem;
+  }
+
+  /* ===== NAV / TOC ===== */
+  .toc {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .toc a {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    transition: all 0.2s;
+    margin-right: 0.25rem;
+  }
+  .toc a:hover, .toc a:active {
+    background: var(--pale-blue);
+    color: var(--blue);
+  }
+
+  /* ===== MAIN CONTENT ===== */
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1rem 4rem;
+  }
+
+  /* ===== SECTIONS ===== */
+  .section {
+    background: var(--white);
+    border-radius: var(--radius);
+    margin-top: 1.5rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border: 1px solid var(--border);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--light-blue);
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin: 1.8rem 0 0.75rem;
+    letter-spacing: -0.2px;
+  }
+  h3:first-of-type { margin-top: 0.5rem; }
+
+  h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 1.4rem 0 0.5rem;
+  }
+
+  p { margin-bottom: 0.85rem; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ===== EMERGENCY BOX ===== */
+  .emergency-box {
+    background: linear-gradient(135deg, #1B3A5C, #2E75B6);
+    color: white;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .emergency-box .label {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .emergency-box .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .emergency-box .phone {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .emergency-box a {
+    color: white;
+    text-decoration: none;
+  }
+  .emergency-box a:active {
+    opacity: 0.8;
+  }
+
+  /* ===== INFO BOX (location, gate code) ===== */
+  .info-box {
+    background: var(--pale-blue);
+    border: 1px solid var(--light-blue);
+    border-left: 4px solid var(--blue);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+  }
+  .info-box .row {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+  }
+  .info-box .row:last-child { margin-bottom: 0; }
+  .info-box .lbl {
+    font-weight: 700;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .gate-code {
+    font-weight: 800;
+    color: #c62828;
+    font-size: 1.1rem;
+  }
+
+  /* ===== ALERT / IMPORTANT BOX ===== */
+  .alert {
+    background: var(--alert-bg);
+    border-left: 4px solid var(--alert-border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  .alert-label {
+    font-weight: 700;
+    color: var(--alert-text);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.35rem;
+  }
+  .alert p { color: var(--alert-text); margin-bottom: 0.5rem; }
+  .alert p:last-child { margin-bottom: 0; }
+
+  /* ===== LISTS ===== */
+  ul, ol {
+    padding-left: 1.3rem;
+    margin: 0.5rem 0 1rem;
+  }
+  li {
+    margin-bottom: 0.35rem;
+    line-height: 1.55;
+  }
+  li::marker {
+    color: var(--blue);
+  }
+
+  /* ===== TABLES ===== */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 500px;
+  }
+  thead th {
+    background: var(--navy);
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) { background: var(--light-gray); }
+  tbody tr:last-child td { border-bottom: none; }
+
+  /* Timeline table specific */
+  .timeline-table td:first-child {
+    font-weight: 600;
+    color: var(--navy);
+    white-space: nowrap;
+    min-width: 140px;
+  }
+
+  /* ===== DRESS CODE ===== */
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+  .do-box, .dont-box {
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  .do-box {
+    background: #f0faf0;
+    border: 1px solid #c8e6c9;
+  }
+  .dont-box {
+    background: #fef0f0;
+    border: 1px solid #ffcdd2;
+  }
+  .do-box h4, .dont-box h4 {
+    margin: 0 0 0.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .do-box h4 { color: #2e7d32; }
+  .dont-box h4 { color: #c62828; }
+  .do-box ul, .dont-box ul {
+    padding-left: 1.1rem;
+    margin: 0;
+  }
+  .do-box li::marker { color: #2e7d32; }
+  .dont-box li::marker { color: #c62828; }
+
+  /* ===== MAP IMAGES ===== */
+  .map-group {
+    margin: 1.2rem 0;
+  }
+  .map-group .map-label {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .map-group img {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+  }
+
+  /* ===== 3D TOUR LINK ===== */
+  .tour-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--pale-blue);
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: all 0.2s;
+    border: 1px solid var(--light-blue);
+  }
+  .tour-link:hover {
+    background: var(--light-blue);
+  }
+  .tour-link::before { content: '🔗'; font-size: 0.8rem; }
+
+  /* ===== CONTACT TABLE ===== */
+  .contact-table td:nth-child(3) {
+    color: var(--blue);
+    word-break: break-all;
+  }
+
+  /* ===== FOOTER ===== */
+  .page-footer {
+    text-align: center;
+    padding: 2rem 1.5rem 3rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+  .page-footer .brand {
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    .hero h2 { font-size: 1.1rem; }
+    .section { padding: 1.5rem 1.15rem; }
+    .section-title { font-size: 1.35rem; }
+    .do-dont { grid-template-columns: 1fr; }
+    .hero-venues { flex-direction: column; gap: 0.3rem; }
+    .emergency-box .phone { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Confidential • Partner Use Only</div>
+  <h1>Continental</h1>
+  <h2>Partner Handbook</h2>
+  <div class="hero-divider"></div>
+  <div class="hero-venues">
+    <span>Infinity Yacht</span>
+    <span>Ovation Yacht</span>
+  </div>
+  <div class="hero-sub">Processes, Procedures &amp; Expectations</div>
+</div>
+
+<!-- STICKY NAV -->
+<nav class="toc">
+  <a href="#policies">Policies</a>
+  <a href="#yachts">Yachts</a>
+  <a href="#arrival">Arrival</a>
+  <a href="#downtown">Downtown</a>
+  <a href="#ceremonies">Ceremonies</a>
+  <a href="#infinity">Infinity</a>
+  <a href="#ovation">Ovation</a>
+  <a href="#contacts">Contacts</a>
+</nav>
+
+<div class="content">
+
+  <!-- ============================== -->
+  <!-- GENERAL POLICIES               -->
+  <!-- ============================== -->
+  <div class="section" id="policies">
+    <div class="section-title">General Policies &amp; Expectations</div>
+
+    <h3>Emergency Contact</h3>
+    <p>For any day-of issue — equipment failure, venue problem, client conflict, or anything else that needs immediate attention — call:</p>
+    <div class="emergency-box">
+      <div class="label">Day-of Emergency</div>
+      <div class="name">Spencer Frazier</div>
+      <div class="phone"><a href="tel:5868797188">586-879-7188</a></div>
+    </div>
+    <div class="alert">
+      <div class="alert-label">⚠ Important</div>
+      <p>Do not attempt to resolve client conflicts or venue disputes on your own. Call Spencer immediately and let him handle it.</p>
+    </div>
+
+    <h3>Dress Code</h3>
+    <p>Continental events are upscale. Your appearance should match the caliber of the venue and the expectations of the clients. The standard is wedding-formal with a stylish, modern edge.</p>
+    <div class="do-dont">
+      <div class="do-box">
+        <h4>✓ Example Outfit</h4>
+        <ul>
+          <li>Black Lululemon-style slacks (fitted, clean)</li>
+          <li>White button-up shirt</li>
+          <li>Gray sport coat or blazer</li>
+          <li>Clean, stylish sneakers or dress shoes</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>✗ Do Not Wear</h4>
+        <ul>
+          <li>T-shirts, hoodies, or casual streetwear</li>
+          <li>Ripped, faded, or baggy jeans</li>
+          <li>Dirty or worn-out shoes</li>
+          <li>Hats or sunglasses indoors</li>
+        </ul>
+      </div>
+    </div>
+    <p>When in doubt, overdress. You represent Prestige Weddings &amp; Events and Continental at every event.</p>
+
+    <h3>Cancellations &amp; Weather Changes</h3>
+    <h4>Weather-Related Changes (day of event)</h4>
+    <p>Contact the day-of Event Manager directly. This person is different for each event and will be identified in your event details. They have authority to make real-time decisions about ceremony relocation, setup changes, and timing adjustments.</p>
+    <h4>Event Cancellations</h4>
+    <p>Contact Spencer Frazier at <a href="tel:5868797188">586-879-7188</a>. Do not communicate cancellation details directly with the client.</p>
+
+    <h3>Equipment Troubleshooting</h3>
+    <p>Equipment issues happen. Stay calm, work the problem, and communicate early.</p>
+    <ol>
+      <li>Identify the issue and attempt a quick fix (swap cables, restart controller, switch inputs).</li>
+      <li>If not resolved within 5 minutes, call Spencer at <a href="tel:5868797188">586-879-7188</a> immediately. Do not wait until the problem escalates.</li>
+      <li>Keep music playing by any means necessary — phone aux, Bluetooth speaker, laptop direct — while troubleshooting.</li>
+      <li>Never tell the client the equipment is broken. Simply say you're making a quick adjustment.</li>
+    </ol>
+    <div class="alert">
+      <div class="alert-label">⚠ Important</div>
+      <p>Always bring backup essentials to every event:</p>
+      <ul style="margin-top:0.4rem;">
+        <li>Backup cables (XLR, aux, power)</li>
+        <li>Backup music device (phone or tablet with playlists ready)</li>
+        <li>Backup wireless mic batteries</li>
+        <li>Gaff tape and zip ties</li>
+      </ul>
+    </div>
+
+    <h3>Typical Event Timeline</h3>
+    <p>Every event is different, but here is a general flow for a standard yacht wedding with a ceremony. Always defer to the specific event details provided by the detailer.</p>
+    <div class="table-wrap">
+      <table class="timeline-table">
+        <thead><tr><th>Timing</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>2 hrs before music</td><td>Arrive at Jefferson Beach Marina, enter gate (code 2202), drive to dock</td></tr>
+          <tr><td>Upon arrival</td><td>Unload equipment at boarding zone, move vehicle to parking area</td></tr>
+          <tr><td>If ceremony</td><td>Set up ceremony sound (speaker, mic, mixer) at ceremony site — 100 ft left of gazebo</td></tr>
+          <tr><td>30 min before guests</td><td>All equipment loaded on yacht and fully set up</td></tr>
+          <tr><td>Ceremony time</td><td>Run ceremony audio: seating music, processional, recessional, mic for officiant</td></tr>
+          <tr><td>Ceremony ends</td><td>Immediately break down ceremony equipment and board the yacht</td></tr>
+          <tr><td>Boarding / Cocktails</td><td>DJ plays music on upper deck — house system handles all other areas of the yacht</td></tr>
+          <tr><td>Speeches</td><td>DJ emcees speeches using the house system microphone</td></tr>
+          <tr><td>Dinner</td><td>DJ plays music on upper deck — house system handles all other areas of the yacht</td></tr>
+          <tr><td>Reception / Dancing</td><td>DJ is live on upper deck — run reception, introductions, first dance, open dancing</td></tr>
+          <tr><td>Event end</td><td>Break down equipment, load off yacht, depart</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- INFINITY & OVATION YACHTS      -->
+  <!-- ============================== -->
+  <div class="section" id="yachts">
+    <div class="section-title">Infinity &amp; Ovation Yachts</div>
+
+    <div class="info-box">
+      <div class="row"><span class="lbl">Location:</span> Jefferson Beach Marina</div>
+      <div class="row"><span class="lbl">Address:</span> 24400 Jefferson Ave, St Clair Shores, MI 48080</div>
+      <div class="row"><span class="lbl">Gate Code:</span> <span class="gate-code">2202</span></div>
+    </div>
+
+    <h3 id="arrival">Arrival &amp; Load-In</h3>
+    <p>Always arrive <strong>2 hours before</strong> the planned music start time. Navigate to Jefferson Beach Marina and pull through the gate using code 2202. Drive approximately 0.5 miles to reach the docking area for the yachts.</p>
+    <p>You may park your vehicle close to the boarding zone during unloading, then move to the designated parking area once equipment is off-loaded.</p>
+    <div class="alert">
+      <div class="alert-label">⚠ Important</div>
+      <p>All equipment must be loaded onto the yacht and fully set up at least <strong>30 minutes before</strong> planned guest arrival and boarding.</p>
+    </div>
+
+    <div class="map-group">
+      <div class="map-label">Marina Overview — Entry, Gate &amp; Unloading Zone</div>
+      <img src="Jefferson_Beach_Marina_Map_1.png" alt="Marina overview map showing entrance, gate location, and equipment unloading zone">
+    </div>
+    <div class="map-group">
+      <div class="map-label">Dock Area — Parking, Yacht Docking &amp; Ceremony Site</div>
+      <img src="Jefferson_Beach_Marina_Map_2.png" alt="Close-up map showing parking area, yacht docking locations, and ceremony site">
+    </div>
+
+    <h3 id="downtown">Downtown Docking Events</h3>
+    <p>Some events are downtown docking events, where guests board and exit in downtown Detroit rather than at Jefferson Beach Marina. For these events, the yacht cruises from the marina to the downtown dock before guests arrive.</p>
+    <div class="alert">
+      <div class="alert-label">⚠ Important</div>
+      <p>Downtown docking events require you to arrive <strong>3.5 hours before</strong> the event start time at Jefferson Beach Marina — not downtown.</p>
+      <p>You will set up your equipment while the yacht cruises from the marina to the downtown Detroit dock.</p>
+      <p>Downtown docking events include additional pay to compensate for the extended time commitment.</p>
+    </div>
+
+    <h3 id="ceremonies">Ceremonies</h3>
+    <p>Ceremonies take place on the water, approximately 100 feet to the left of the wooden gazebo.</p>
+    <div class="alert">
+      <div class="alert-label">⚠ Important</div>
+      <p>You will need approximately <strong>100 ft of extension cord</strong> to run power to the ceremony site. Plan accordingly.</p>
+    </div>
+    <p>The client is promised the following for their ceremony:</p>
+    <ul>
+      <li>Music for seating, processional, and recessional</li>
+      <li>One handheld microphone on a stand</li>
+      <li>Additional microphones available upon request</li>
+    </ul>
+
+    <h4>Ceremony Equipment Checklist</h4>
+    <ul>
+      <li>Powered speaker (8" top or larger)</li>
+      <li>Speaker stand</li>
+      <li>Wired microphone</li>
+      <li>Mic stand</li>
+      <li>Multi-channel mixer</li>
+      <li>100 ft XLR cable</li>
+      <li>100 ft extension cord</li>
+      <li>Aux cord</li>
+      <li>Speaker stand shelf</li>
+      <li>Music device (laptop, tablet, or phone)</li>
+      <li>Gaff tape</li>
+    </ul>
+    <h4>Recommended</h4>
+    <ul>
+      <li>Umbrella (for sun/rain during setup)</li>
+      <li>Small table for mixer and music device</li>
+    </ul>
+    <div class="alert">
+      <div class="alert-label">⚠ Important</div>
+      <p>As soon as the ceremony ends, <strong>quickly break down all ceremony equipment and board the yacht immediately</strong>. Time is critical.</p>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- INFINITY YACHT                 -->
+  <!-- ============================== -->
+  <div class="section" id="infinity">
+    <div class="section-title">Infinity Yacht</div>
+    <a class="tour-link" href="https://my.matterport.com/show/?m=BpzGjvbDfXs" target="_blank" rel="noopener">3D Tour on Matterport</a>
+
+    <h3>DJ Setup — Second Deck</h3>
+    <p>The main DJ sound system is set up on the second deck, underneath the awning, in the corner. Stands are recommended but not required if weather is unfavorable.</p>
+    <h4>Required Equipment</h4>
+    <ul>
+      <li>4 ft table with black linen OR Pro X Vista booth</li>
+      <li>One speaker (12" or larger)</li>
+      <li>Controller</li>
+      <li>Wireless microphone</li>
+      <li>One Kinta dance light (evening events only — not needed for daytime)</li>
+    </ul>
+
+    <h3>Dinner Music &amp; Speeches</h3>
+    <div class="alert">
+      <div class="alert-label">⚠ Important</div>
+      <p>The DJ plays music on the upper deck during cocktails and dinner. The house system handles background music for all other areas of the yacht. If a client has specific dinner music preferences, they must communicate them to their detailer, who coordinates with the cruise director.</p>
+    </div>
+    <div class="alert">
+      <div class="alert-label">⚠ Important</div>
+      <p>The DJ emcees speeches using the house system microphone. Microphones for speeches, cake cutting, and other 1st deck activities are provided by the yacht — <strong>NOT by the DJ</strong>. Make this abundantly clear to avoid confusion.</p>
+    </div>
+
+    <h3>Grand Entrance</h3>
+    <p>There are no traditional grand entrances on the Infinity Yacht. Instead, the "grand entrance" happens simultaneously with the couple's first dance so all guests can see from the second deck.</p>
+    <div class="alert">
+      <div class="alert-label">⚠ Important</div>
+      <p><strong>Exception:</strong> Sometimes a grand entrance onto the Infinity Yacht is permitted. In that case, use the main sound system on the second deck and point the speaker toward the dock. Confirm with the detailer beforehand.</p>
+    </div>
+  </div>
+
+  <!-- ============================== -->
+  <!-- OVATION YACHT                  -->
+  <!-- ============================== -->
+  <div class="section" id="ovation">
+    <div class="section-title">Ovation Yacht</div>
+    <a class="tour-link" href="https://my.matterport.com/show/?m=QkeLPHqY6WX" target="_blank" rel="noopener">3D Tour on Matterport</a>
+
+    <h3>DJ Setup — Third Deck</h3>
+    <p>The main DJ sound system is set up on the third deck, directly in front of the American Flag. This space is uncovered.</p>
+    <div class="alert">
+      <div class="alert-label">⚠ Important</div>
+      <p>In the event of rain or inclement weather: set up underneath the covered area by the bar, or wait until weather subsides to set up on the third deck.</p>
+    </div>
+    <p>If using tops on tripod stands, keep the stands close to the DJ table and set to the lowest height. On windy days, tops should be placed on the ground, kick-stand style, pointing up at a 45-degree angle.</p>
+    <h4>Required Equipment</h4>
+    <ul>
+      <li>4 ft table with black linen OR Pro X Vista booth</li>
+      <li>Two speakers (12" or larger; Evolve 50s available)</li>
+      <li>Controller</li>
+      <li>External mixer (if part of your standard setup)</li>
+      <li>Wireless microphone</li>
+      <li>One Kinta dance light (evening events only — not needed for daytime)</li>
+    </ul>
+
+    <h3>Dinner Music &amp; Speeches</h3>
+    <div class="alert">
+      <div class="alert-label">⚠ Important</div>
+      <p>Same policies as the Infinity Yacht: The DJ plays music on the upper deck during cocktails and dinner. The house system handles all other areas. The DJ emcees speeches using the house system microphone — speech mics are provided by the yacht, <strong>NOT by the DJ</strong>. Special song requests during dinner are to be submitted by the client to the detailer.</p>
+    </div>
+
+    <h3>Grand Entrance</h3>
+    <p>There are no traditional grand entrances on the Ovation Yacht. The "grand entrance" happens simultaneously with the first dance on the third deck so all guests can see.</p>
+  </div>
+
+  <!-- ============================== -->
+  <!-- CONTACT DIRECTORY              -->
+  <!-- ============================== -->
+  <div class="section" id="contacts">
+    <div class="section-title">Contact Directory</div>
+    <p>The detailers at Continental are the main point of contact for clients. Reach out to the appropriate contact based on venue.</p>
+
+    <div class="emergency-box" style="margin: 1.2rem 0;">
+      <div class="label">Day-of Emergency Contact</div>
+      <div class="name">Spencer Frazier</div>
+      <div class="phone"><a href="tel:5868797188">586-879-7188</a></div>
+    </div>
+
+    <h3>Detailers</h3>
+    <div class="table-wrap">
+      <table class="contact-table">
+        <thead><tr><th>Role / Venue</th><th>Name</th><th>Email</th><th>Phone</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Yachts (Weddings)</strong></td><td>Lizzie Rupinski</td><td>em.rupinski@continentalserves.com</td><td><a href="tel:5862564503">586-256-4503</a></td></tr>
+          <tr><td><strong>Yachts (Weddings)</strong></td><td>Clare Meek</td><td>c.meek@infinityandovation.com</td><td><a href="tel:2488780492">248-878-0492</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Sales Team</h3>
+    <p>The sales team handles corporate events on the yachts.</p>
+    <div class="table-wrap">
+      <table class="contact-table">
+        <thead><tr><th>Role</th><th>Name</th><th>Email</th><th>Phone</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Sr. Sales Manager</strong></td><td>Bridgette Leising</td><td>b.leising@continentalserves.com</td><td><a href="tel:5868450677">586-845-0677</a></td></tr>
+          <tr><td><strong>Sales</strong></td><td>Lindsey Walsh</td><td>l.walsh@continentalserves.com</td><td><a href="tel:3134020692">313-402-0692</a></td></tr>
+          <tr><td><strong>Sales</strong></td><td>Kate Pernia</td><td>k.pernia@continentalserves.com</td><td><a href="tel:5862562373">586-256-2373</a></td></tr>
+          <tr><td><strong>Sales</strong></td><td>Megan McLuckie</td><td>m.mcluckie@continentalserves.com</td><td><a href="tel:2488407593">248-840-7593</a></td></tr>
+          <tr><td><strong>Sales</strong></td><td>Kaley Hay</td><td>k.hay@continentalserves.com</td><td><a href="tel:2489147144">248-914-7144</a></td></tr>
+          <tr><td><strong>VP of Sales</strong></td><td>Laura Stewart</td><td>l.stewart@continentalserves.com</td><td><a href="tel:5866064429">586-606-4429</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="page-footer">
+  <span class="brand">Prestige Weddings &amp; Events</span> × Continental Serves<br>
+  Confidential — For Preferred Partner Use Only
+</div>
+
+</body>
+</html>
